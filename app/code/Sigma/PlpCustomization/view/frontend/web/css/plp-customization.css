@@ -1,0 +1,124 @@
+/**
+ * Sigma PLP Customization Styles
+ * Hide Wishlist and Compare elements based on body class
+ *
+ * @category  Sigma
+ * @package   Sigma_PlpCustomization
+ */
+
+/* ================================
+   Hide Add to Wishlist
+   ================================ */
+
+/* Product list item - wishlist action */
+.sigma-hide-wishlist .product-item-actions .action.towishlist,
+.sigma-hide-wishlist .product-item-inner .action.towishlist,
+.sigma-hide-wishlist .product-item .action.towishlist,
+.sigma-hide-wishlist .products-grid .action.towishlist,
+.sigma-hide-wishlist .products-list .action.towishlist,
+.sigma-hide-wishlist .product-items .action.towishlist {
+    display: none !important;
+}
+
+/* Toolbar and secondary actions - wishlist */
+.sigma-hide-wishlist .product-addto-links .action.towishlist,
+.sigma-hide-wishlist .product-social-links .action.towishlist,
+.sigma-hide-wishlist .product-item-actions .actions-secondary .action.towishlist {
+    display: none !important;
+}
+
+/* Wishlist link in product options */
+.sigma-hide-wishlist [data-action="add-to-wishlist"],
+.sigma-hide-wishlist a.action.towishlist {
+    display: none !important;
+}
+
+/* ================================
+   Hide Add to Compare
+   ================================ */
+
+/* Product list item - compare action */
+.sigma-hide-compare .product-item-actions .action.tocompare,
+.sigma-hide-compare .product-item-inner .action.tocompare,
+.sigma-hide-compare .product-item .action.tocompare,
+.sigma-hide-compare .products-grid .action.tocompare,
+.sigma-hide-compare .products-list .action.tocompare,
+.sigma-hide-compare .product-items .action.tocompare {
+    display: none !important;
+}
+
+/* Toolbar and secondary actions - compare */
+.sigma-hide-compare .product-addto-links .action.tocompare,
+.sigma-hide-compare .product-social-links .action.tocompare,
+.sigma-hide-compare .product-item-actions .actions-secondary .action.tocompare {
+    display: none !important;
+}
+
+/* Compare link in product options */
+.sigma-hide-compare [data-action="add-to-compare"],
+.sigma-hide-compare a.action.tocompare {
+    display: none !important;
+}
+
+/* Compare products link in header/toolbar */
+.sigma-hide-compare .compare.wrapper,
+.sigma-hide-compare a.action.compare {
+    display: none !important;
+}
+
+/* ================================
+   Hide Compare Sidebar Block
+   ================================ */
+.sigma-hide-compare-sidebar .block.block-compare,
+.sigma-hide-compare-sidebar #block-compare-heading,
+.sigma-hide-compare-sidebar .sidebar .block-compare {
+    display: none !important;
+}
+
+/* ================================
+   Hide Wishlist Sidebar Block
+   ================================ */
+.sigma-hide-wishlist-sidebar .block.block-wishlist,
+.sigma-hide-wishlist-sidebar #block-wishlist-heading,
+.sigma-hide-wishlist-sidebar .sidebar .block-wishlist {
+    display: none !important;
+}
+
+/* ================================
+   Layered Navigation Cleanup
+   ================================ */
+
+/* Remove empty secondary actions container when both are hidden */
+.sigma-hide-wishlist.sigma-hide-compare .product-item-actions .actions-secondary {
+    display: none !important;
+}
+
+/* Adjust product item layout when actions hidden */
+.sigma-hide-wishlist.sigma-hide-compare .product-item-inner {
+    padding-bottom: 10px;
+}
+
+.sigma-hide-wishlist.sigma-hide-compare .product-item-actions {
+    min-height: auto;
+}
+
+/* ================================
+   Search Results Page
+   ================================ */
+.catalogsearch-result-index.sigma-hide-wishlist .action.towishlist,
+.catalogsearch-result-index.sigma-hide-compare .action.tocompare {
+    display: none !important;
+}
+
+/* ================================
+   Widget Product Lists
+   ================================ */
+.sigma-hide-wishlist .widget .action.towishlist,
+.sigma-hide-wishlist .block-products-list .action.towishlist {
+    display: none !important;
+}
+
+.sigma-hide-compare .widget .action.tocompare,
+.sigma-hide-compare .block-products-list .action.tocompare {
+    display: none !important;
+}

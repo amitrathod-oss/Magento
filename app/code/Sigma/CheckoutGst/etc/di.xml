@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutGst Dependency Injection
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutGst
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- Plugin for server-side validation and saving GST to quote -->
+    <type name="Magento\Checkout\Api\ShippingInformationManagementInterface">
+        <plugin name="sigma_checkout_gst_shipping_save" 
+                type="Sigma\CheckoutGst\Plugin\Checkout\ShippingInformationManagement"/>
+    </type>
+    
+</config>

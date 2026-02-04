@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CustomLink Frontend Dependency Injection
+ *
+ * @category  Sigma
+ * @package   Sigma_CustomLink
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Block\Html\Topmenu">
+        <plugin name="sigma_customlink_topmenu" 
+                type="Sigma\CustomLink\Plugin\Topmenu" 
+                sortOrder="100" 
+                disabled="false"/>
+    </type>
+</config>

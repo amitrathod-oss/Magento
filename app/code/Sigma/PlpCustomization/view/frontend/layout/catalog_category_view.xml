@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma PlpCustomization Catalog Category View Layout
+ * Conditionally remove sidebar blocks
+ *
+ * @category  Sigma
+ * @package   Sigma_PlpCustomization
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+    <body>
+        <!-- Reference compare products sidebar for conditional removal -->
+        <referenceBlock name="catalog.compare.sidebar" remove="false">
+            <arguments>
+                <argument name="sigma_plp_config" xsi:type="object">Sigma\PlpCustomization\ViewModel\PlpConfig</argument>
+            </arguments>
+        </referenceBlock>
+        
+        <!-- Reference wishlist sidebar for conditional removal -->
+        <referenceBlock name="wishlist_sidebar" remove="false">
+            <arguments>
+                <argument name="sigma_plp_config" xsi:type="object">Sigma\PlpCustomization\ViewModel\PlpConfig</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+    
+</page>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutGst Sales Order Grid UI Component
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutGst
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    
+    <columns name="sales_order_columns">
+        <column name="company_gst_no" class="Sigma\CheckoutGst\Ui\Component\Listing\Column\GstNumber">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Company GST No</label>
+                <sortOrder>85</sortOrder>
+                <visible>true</visible>
+            </settings>
+        </column>
+    </columns>
+    
+</listing>

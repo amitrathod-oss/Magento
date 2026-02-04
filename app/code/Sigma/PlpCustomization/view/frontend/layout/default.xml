@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma PlpCustomization Default Layout
+ *
+ * @category  Sigma
+ * @package   Sigma_PlpCustomization
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    
+    <head>
+        <css src="Sigma_PlpCustomization::css/plp-customization.css"/>
+    </head>
+    
+    <body>
+        <!-- Add ViewModel to body for accessing config -->
+        <referenceBlock name="root">
+            <arguments>
+                <argument name="sigma_plp_config" xsi:type="object">Sigma\PlpCustomization\ViewModel\PlpConfig</argument>
+            </arguments>
+        </referenceBlock>
+        
+        <!-- Add block to inject CSS classes -->
+        <referenceContainer name="before.body.end">
+            <block class="Sigma\PlpCustomization\Block\PlpBodyClass" 
+                   name="sigma.plp.body.class" 
+                   template="Sigma_PlpCustomization::body-class.phtml"/>
+        </referenceContainer>
+    </body>
+    
+</page>

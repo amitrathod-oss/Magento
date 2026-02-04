@@ -1,0 +1,102 @@
+# Magento 2 .gitignore - Custom Modules Only
+# This gitignore keeps only your custom code and essential files
+
+# =========================
+# Magento Core Directories (EXCLUDE)
+# =========================
+/dev/
+/lib/
+/setup/
+/phpserver/
+/bin/
+
+# =========================
+# Vendor and Dependencies
+# =========================
+/vendor/
+
+# =========================
+# Development Tools
+# =========================
+/.ddev/
+/node_modules/
+/.grunt/
+/Gruntfile.js
+/Gruntfile.js.sample
+/package.json
+/package.json.sample
+/package-lock.json
+/grunt-config.json
+/grunt-config.json.sample
+
+# =========================
+# Generated Files
+# =========================
+/generated/
+
+# =========================
+# Static Content & Cache
+# =========================
+/pub/static/
+/pub/media/
+
+# =========================
+# Var Directory (Cache/Logs/Sessions)
+# =========================
+/var/
+
+# =========================
+# Configuration Files (Sensitive)
+# =========================
+/app/etc/env.php
+/app/etc/config.php
+/auth.json
+
+# =========================
+# IDE and Editor Files
+# =========================
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =========================
+# Sitemap
+# =========================
+/sitemap.xml
+/sitemap/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Update Directory
+# =========================
+/update/
+
+# =========================
+# Sample files
+# =========================
+*.sample
+
+# =========================
+# Htaccess & user.ini (sensitive)
+# =========================
+/.htaccess
+/.user.ini

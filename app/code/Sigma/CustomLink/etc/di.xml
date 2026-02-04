@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CustomLink Dependency Injection Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_CustomLink
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Interface Preference -->
+    <preference for="Sigma\CustomLink\Api\Data\CustomLinkInterface"
+                type="Sigma\CustomLink\Model\Data\CustomLink"/>
+</config>

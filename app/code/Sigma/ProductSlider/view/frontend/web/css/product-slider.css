@@ -1,0 +1,519 @@
+/**
+ * Sigma Product Slider Styles
+ * Clean, Minimal, High-Quality Design
+ *
+ * @category  Sigma
+ * @package   Sigma_ProductSlider
+ */
+
+/* ================================
+   Theme Colors
+   ================================ */
+:root {
+    --sigma-primary: #1979c3;
+    --sigma-primary-dark: #006bb4;
+    --sigma-text: #333333;
+    --sigma-text-light: #666666;
+    --sigma-border: #e0e0e0;
+    --sigma-bg: #ffffff;
+    --sigma-bg-alt: #f5f5f5;
+    --sigma-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --sigma-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --sigma-transition: 0.3s ease;
+    --sigma-radius: 4px;
+}
+
+/* ================================
+   Slider Wrapper - Contained Layout
+   ================================ */
+.sigma-product-slider-wrapper {
+    position: relative;
+    margin: 40px auto;
+    padding: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ================================
+   Slider Header
+   ================================ */
+.sigma-slider-header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.sigma-slider-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--sigma-text);
+    margin: 0;
+    padding: 0;
+}
+
+.sigma-slider-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--sigma-primary);
+    margin: 12px auto 0;
+}
+
+/* ================================
+   Slider Container
+   ================================ */
+.sigma-product-slider {
+    position: relative;
+    padding: 0 50px;
+    margin: 0;
+}
+
+.sigma-product-slider .slick-list {
+    overflow: hidden;
+    margin: 0 -10px;
+}
+
+/* .sigma-product-slider .slick-track {
+    display: flex;
+} */
+
+.sigma-product-slider .slick-slide {
+    padding: 0 10px;
+    height: auto;
+}
+
+.sigma-product-slider .slick-slide>div {
+    height: 100%;
+}
+
+/* ================================
+   Product Item
+   ================================ */
+.sigma-slider-item {
+    height: 100%;
+}
+
+/* ================================
+   Product Card
+   ================================ */
+.sigma-product-card {
+    background: var(--sigma-bg);
+    border: 1px solid var(--sigma-border);
+    border-radius: var(--sigma-radius);
+    overflow: hidden;
+    transition: box-shadow var(--sigma-transition), transform var(--sigma-transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sigma-product-card:hover {
+    box-shadow: var(--sigma-shadow-hover);
+    transform: translateY(-4px);
+}
+
+/* ================================
+   Product Image
+   ================================ */
+.sigma-product-image-container {
+    position: relative;
+    background: var(--sigma-bg-alt);
+    padding-top: 100%;
+}
+
+.sigma-product-image-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.sigma-product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform var(--sigma-transition);
+}
+
+.sigma-product-card:hover .sigma-product-image {
+    transform: scale(1.05);
+}
+
+.sigma-product-image.lazy {
+    opacity: 0;
+}
+
+.sigma-product-image.lazy.loaded {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+/* ================================
+   Product Labels
+   ================================ */
+.sigma-product-label {
+    position: absolute;
+    top: 10px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.sigma-label-sale {
+    left: 10px;
+    background: #e74c3c;
+    color: #fff;
+}
+
+.sigma-label-new {
+    right: 10px;
+    left: auto;
+    background: #27ae60;
+    color: #fff;
+}
+
+/* ================================
+   Product Info
+   ================================ */
+.sigma-product-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================
+   Product Name
+   ================================ */
+.sigma-product-name {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    min-height: 40px;
+}
+
+.sigma-product-name a {
+    color: var(--sigma-text);
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sigma-product-name a:hover {
+    color: var(--sigma-primary);
+}
+
+/* ================================
+   Product Price
+   ================================ */
+.sigma-product-price {
+    margin-bottom: 15px;
+}
+
+.sigma-product-price .price-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.sigma-product-price .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sigma-text);
+}
+
+.sigma-product-price .old-price .price {
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.sigma-product-price .special-price .price {
+    color: #e74c3c;
+}
+
+/* ================================
+   Product Actions
+   ================================ */
+.sigma-product-actions {
+    margin-top: auto;
+}
+
+.sigma-action-tocart {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--sigma-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--sigma-radius);
+    cursor: pointer;
+    transition: background var(--sigma-transition);
+}
+
+.sigma-action-tocart:hover {
+    background: var(--sigma-primary-dark);
+}
+
+.sigma-action-tocart span {
+    display: block;
+}
+
+.sigma-stock-status.out-of-stock {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    background: var(--sigma-bg-alt);
+    color: #999;
+    border-radius: var(--sigma-radius);
+}
+
+/* ================================
+   Secondary Actions
+   ================================ */
+.sigma-secondary-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--sigma-border);
+}
+
+.sigma-action-wishlist,
+.sigma-action-compare {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: var(--sigma-bg-alt);
+    border: 1px solid var(--sigma-border);
+    border-radius: 50%;
+    color: var(--sigma-text-light);
+    text-decoration: none;
+    transition: all var(--sigma-transition);
+}
+
+.sigma-action-wishlist:hover,
+.sigma-action-compare:hover {
+    background: var(--sigma-primary);
+    border-color: var(--sigma-primary);
+    color: #fff;
+}
+
+.sigma-action-wishlist span,
+.sigma-action-compare span {
+    display: none;
+}
+
+.sigma-action-wishlist::before {
+    content: '\2665';
+    font-size: 16px;
+}
+
+.sigma-action-compare::before {
+    content: '\21C4';
+    font-size: 14px;
+}
+
+/* ================================
+   Navigation Arrows
+   ================================ */
+.sigma-product-slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--sigma-bg);
+    border: 2px solid var(--sigma-primary);
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    z-index: 10;
+    transition: all var(--sigma-transition);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.sigma-product-slider .slick-arrow:hover {
+    background: var(--sigma-primary);
+}
+
+.sigma-product-slider .slick-arrow:focus {
+    outline: none;
+}
+
+.sigma-product-slider .slick-arrow::before {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--sigma-primary);
+    transition: color var(--sigma-transition);
+}
+
+.sigma-product-slider .slick-arrow:hover::before {
+    color: #fff;
+}
+
+.sigma-product-slider .slick-prev {
+    left: 0;
+}
+
+.sigma-product-slider .slick-prev::before {
+    content: '\2039';
+}
+
+.sigma-product-slider .slick-next {
+    right: 0;
+}
+
+.sigma-product-slider .slick-next::before {
+    content: '\203A';
+}
+
+.sigma-product-slider .slick-disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* ================================
+   Dots Navigation
+   ================================ */
+.sigma-product-slider .slick-dots {
+    display: flex !important;
+    justify-content: center;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    bottom: 0;
+}
+
+.sigma-product-slider .slick-dots li {
+    margin: 0 4px;
+}
+
+.sigma-product-slider .slick-dots li button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    background: var(--sigma-border);
+    border: none;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+    transition: all var(--sigma-transition);
+}
+
+.sigma-product-slider .slick-dots li button:focus {
+    outline: none;
+}
+
+.sigma-product-slider .slick-dots li.slick-active button {
+    background: var(--sigma-primary);
+    transform: scale(1.2);
+}
+
+/* ================================
+   Responsive - Tablet
+   ================================ */
+@media (max-width: 1024px) {
+    .sigma-product-slider {
+        padding: 0 45px;
+    }
+
+    .sigma-slider-title {
+        font-size: 24px;
+    }
+}
+
+/* ================================
+   Responsive - Mobile
+   ================================ */
+@media (max-width: 768px) {
+    .sigma-product-slider-wrapper {
+        margin: 30px auto;
+    }
+
+    .sigma-product-slider {
+        padding: 0 40px;
+    }
+
+    .sigma-slider-title {
+        font-size: 22px;
+    }
+
+    .sigma-product-info {
+        padding: 12px;
+    }
+
+    .sigma-product-name {
+        font-size: 13px;
+        min-height: 36px;
+    }
+
+    .sigma-product-price .price {
+        font-size: 16px;
+    }
+
+    .sigma-action-tocart {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .sigma-product-slider .slick-arrow {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* ================================
+   Responsive - Small Mobile
+   ================================ */
+@media (max-width: 480px) {
+    .sigma-product-slider {
+        padding: 0 35px;
+    }
+
+    .sigma-slider-title {
+        font-size: 20px;
+    }
+
+    .sigma-product-slider .slick-list {
+        margin: 0 -6px;
+    }
+
+    .sigma-product-slider .slick-slide {
+        padding: 0 6px;
+    }
+
+    .sigma-product-slider .slick-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .sigma-product-slider .slick-arrow::before {
+        font-size: 18px;
+    }
+}

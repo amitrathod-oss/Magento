@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect fill="#f5f5f5" width="400" height="200"/>
+  <rect fill="#e0e0e0" x="20" y="50" width="80" height="100" rx="5"/>
+  <rect fill="#e0e0e0" x="110" y="50" width="80" height="100" rx="5"/>
+  <rect fill="#e0e0e0" x="200" y="50" width="80" height="100" rx="5"/>
+  <rect fill="#e0e0e0" x="290" y="50" width="80" height="100" rx="5"/>
+  <text x="200" y="175" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">Sigma Product Slider</text>
+  <circle fill="#1979c3" cx="15" cy="100" r="10"/>
+  <polygon fill="white" points="12,96 12,104 18,100"/>
+  <circle fill="#1979c3" cx="385" cy="100" r="10"/>
+  <polygon fill="white" points="388,96 388,104 382,100"/>
+</svg>

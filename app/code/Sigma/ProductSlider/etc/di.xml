@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma ProductSlider Dependency Injection Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_ProductSlider
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- Interface Preferences -->
+    <preference for="Sigma\ProductSlider\Api\Data\SliderConfigInterface"
+                type="Sigma\ProductSlider\Model\Data\SliderConfig"/>
+    
+    <preference for="Sigma\ProductSlider\Api\ProductCollectionProviderInterface"
+                type="Sigma\ProductSlider\Model\Product\CollectionProvider"/>
+
+    <!-- Virtual Types for different slider sources -->
+    <virtualType name="Sigma\ProductSlider\Model\Product\NewProductsProvider"
+                 type="Sigma\ProductSlider\Model\Product\CollectionProvider">
+        <arguments>
+            <argument name="productType" xsi:type="string">new</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Sigma\ProductSlider\Model\Product\BestsellerProductsProvider"
+                 type="Sigma\ProductSlider\Model\Product\CollectionProvider">
+        <arguments>
+            <argument name="productType" xsi:type="string">bestseller</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Sigma\ProductSlider\Model\Product\FeaturedProductsProvider"
+                 type="Sigma\ProductSlider\Model\Product\CollectionProvider">
+        <arguments>
+            <argument name="productType" xsi:type="string">featured</argument>
+        </arguments>
+    </virtualType>
+
+</config>

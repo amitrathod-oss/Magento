@@ -1,0 +1,118 @@
+/**
+ * Sigma CustomLink Admin Styles
+ *
+ * @category  Sigma
+ * @package   Sigma_CustomLink
+ */
+
+/* Fix label width for Custom Navigation Link configuration section */
+#row_catalog_custom_navigation_link_enabled .label,
+#row_catalog_custom_navigation_link_links .label {
+    width: 25%;
+    min-width: 200px;
+    max-width: 250px;
+    text-align: right;
+    padding-right: 30px;
+    word-wrap: normal;
+    white-space: normal;
+}
+
+/* Fix value column width */
+#row_catalog_custom_navigation_link_enabled .value,
+#row_catalog_custom_navigation_link_links .value {
+    width: 75%;
+}
+
+/* Improve dynamic rows table styling */
+#catalog_custom_navigation_link_links .admin__control-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table thead th {
+    font-weight: 600;
+    padding: 10px 8px;
+    text-align: left;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table tbody td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+/* Column widths for dynamic rows */
+#catalog_custom_navigation_link_links .admin__control-table th:nth-child(1),
+#catalog_custom_navigation_link_links .admin__control-table td:nth-child(1) {
+    width: 20%;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table th:nth-child(2),
+#catalog_custom_navigation_link_links .admin__control-table td:nth-child(2) {
+    width: 25%;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table th:nth-child(3),
+#catalog_custom_navigation_link_links .admin__control-table td:nth-child(3) {
+    width: 10%;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table th:nth-child(4),
+#catalog_custom_navigation_link_links .admin__control-table td:nth-child(4) {
+    width: 12%;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table th:nth-child(5),
+#catalog_custom_navigation_link_links .admin__control-table td:nth-child(5) {
+    width: 12%;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table th:nth-child(6),
+#catalog_custom_navigation_link_links .admin__control-table td:nth-child(6) {
+    width: 10%;
+    text-align: center;
+}
+
+/* Input styling within table */
+#catalog_custom_navigation_link_links .admin__control-table input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#catalog_custom_navigation_link_links .admin__control-table select {
+    min-width: 70px;
+}
+
+/* Delete button styling */
+#catalog_custom_navigation_link_links .admin__control-table .action-delete {
+    padding: 5px 10px;
+}
+
+/* Add Link button styling */
+#catalog_custom_navigation_link_links button.action-add {
+    margin-top: 10px;
+}
+
+/* Scope label styling */
+#row_catalog_custom_navigation_link_enabled .label .scope-label,
+#row_catalog_custom_navigation_link_links .label .scope-label {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    font-weight: normal;
+    margin-top: 3px;
+}
+
+/* Group title fix */
+#catalog_custom_navigation_link-head {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Comment text styling */
+#row_catalog_custom_navigation_link_links .note {
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px;
+}

@@ -1,0 +1,141 @@
+<?php
+/**
+ * Sigma Product Slider Widget Template
+ *
+ * @var \Sigma\ProductSlider\Block\Widget\ProductSlider $block
+ */
+
+$sliderId = $block->getSliderId();
+$products = $block->getProducts();
+$jsConfig = $block->getJsConfig();
+$isLazyLoad = $block->isLazyLoadEnabled();
+?>
+
+<?php if ($block->hasProducts()): ?>
+<div class="sigma-product-slider-wrapper" id="<?= $block->escapeHtmlAttr($sliderId) ?>-wrapper">
+    
+    <?php if ($block->getTitle()): ?>
+    <div class="sigma-slider-header">
+        <h2 class="sigma-slider-title"><?= $block->escapeHtml($block->getTitle()) ?></h2>
+    </div>
+    <?php endif; ?>
+    
+    <div class="sigma-product-slider" 
+         id="<?= $block->escapeHtmlAttr($sliderId) ?>"
+         data-mage-init='{"sigmaProductSlider": <?= /* @noEscape */ $jsConfig ?>}'>
+        
+        <?php foreach ($products as $product): ?>
+        <div class="sigma-slider-item">
+            <div class="sigma-product-card">
+                
+                <!-- Product Image -->
+                <div class="sigma-product-image-container">
+                    <a href="<?= $block->escapeUrl($block->getProductUrl($product)) ?>" 
+                       class="sigma-product-image-link"
+                       title="<?= $block->escapeHtmlAttr($product->getName()) ?>">
+                        
+                        <?php if ($isLazyLoad): ?>
+                        <img class="sigma-product-image lazy"
+                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3C/svg%3E"
+                             data-src="<?= $block->escapeUrl($block->getProductImageUrl($product)) ?>"
+                             alt="<?= $block->escapeHtmlAttr($product->getName()) ?>"
+                             loading="lazy" />
+                        <?php else: ?>
+                        <img class="sigma-product-image"
+                             src="<?= $block->escapeUrl($block->getProductImageUrl($product)) ?>"
+                             alt="<?= $block->escapeHtmlAttr($product->getName()) ?>" />
+                        <?php endif; ?>
+                    </a>
+                    
+                    <!-- Product Labels -->
+                    <?php if ($product->isAvailable()): ?>
+                        <?php if ($product->getSpecialPrice() && $product->getSpecialPrice() < $product->getPrice()): ?>
+                        <span class="sigma-product-label sigma-label-sale"><?= $block->escapeHtml(__('Sale')) ?></span>
+                        <?php endif; ?>
+                        
+                        <?php 
+                        $newsFromDate = $product->getNewsFromDate();
+                        $newsToDate = $product->getNewsToDate();
+                        $now = date('Y-m-d');
+                        if ($newsFromDate && $newsFromDate <= $now && (!$newsToDate || $newsToDate >= $now)): 
+                        ?>
+                        <span class="sigma-product-label sigma-label-new"><?= $block->escapeHtml(__('New')) ?></span>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="sigma-product-info">
+                    
+                    <!-- Product Name -->
+                    <h3 class="sigma-product-name">
+                        <a href="<?= $block->escapeUrl($block->getProductUrl($product)) ?>"
+                           title="<?= $block->escapeHtmlAttr($product->getName()) ?>">
+                            <?= $block->escapeHtml($product->getName()) ?>
+                        </a>
+                    </h3>
+                    
+                    <!-- Product Price -->
+                    <div class="sigma-product-price">
+                        <?= /* @noEscape */ $block->renderProductPrice($product) ?>
+                    </div>
+                    
+                    <!-- Product Actions -->
+                    <div class="sigma-product-actions">
+                        
+                        <?php if ($block->showAddToCart()): ?>
+                        <?php if ($product->isSaleable()): ?>
+                        <form data-role="tocart-form"
+                              data-product-sku="<?= $block->escapeHtmlAttr($product->getSku()) ?>"
+                              action="<?= $block->escapeUrl($block->getAddToCartUrl($product)) ?>"
+                              method="post">
+                            <?= $block->getBlockHtml('formkey') ?>
+                            <input type="hidden" name="product" value="<?= (int)$product->getId() ?>">
+                            <input type="hidden" name="qty" value="1">
+                            <button type="submit"
+                                    title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>"
+                                    class="sigma-action-tocart action tocart primary">
+                                <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
+                            </button>
+                        </form>
+                        <?php else: ?>
+                        <div class="sigma-stock-status out-of-stock">
+                            <span><?= $block->escapeHtml(__('Out of Stock')) ?></span>
+                        </div>
+                        <?php endif; ?>
+                        <?php endif; ?>
+                        
+                        <div class="sigma-secondary-actions">
+                            <?php if ($block->showWishlist()): ?>
+                            <a href="#"
+                               data-action="add-to-wishlist"
+                               data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($product) ?>'
+                               class="sigma-action-wishlist action towishlist"
+                               title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                            </a>
+                            <?php endif; ?>
+                            
+                            <?php if ($block->showCompare()): ?>
+                            <a href="#"
+                               data-action="add-to-compare"
+                               data-post='<?= /* @noEscape */ $block->getAddToCompareUrl($product) ?>'
+                               class="sigma-action-compare action tocompare"
+                               title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>">
+                                <span><?= $block->escapeHtml(__('Add to Compare')) ?></span>
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <?php endforeach; ?>
+        
+    </div>
+    
+</div>
+<?php endif; ?>

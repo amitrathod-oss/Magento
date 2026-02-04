@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutGst Events Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutGst
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    
+    <!-- Copy GST from quote to order when order is submitted -->
+    <event name="checkout_submit_all_after">
+        <observer name="sigma_checkout_gst_copy_to_order" 
+                  instance="Sigma\CheckoutGst\Observer\CopyGstToOrder"/>
+    </event>
+    
+</config>

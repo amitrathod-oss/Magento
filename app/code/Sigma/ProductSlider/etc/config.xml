@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma ProductSlider Default Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_ProductSlider
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <sigma_product_slider>
+                <enabled>1</enabled>
+                <cache_lifetime>3600</cache_lifetime>
+                <lazy_load>1</lazy_load>
+                <default_image_width>300</default_image_width>
+                <default_image_height>300</default_image_height>
+            </sigma_product_slider>
+        </catalog>
+    </default>
+</config>

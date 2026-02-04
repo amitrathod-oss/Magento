@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma PlpCustomization Default Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_PlpCustomization
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <plp_customization>
+                <enabled>1</enabled>
+                <show_wishlist>0</show_wishlist>
+                <show_compare>0</show_compare>
+                <hide_compare_sidebar>1</hide_compare_sidebar>
+                <hide_wishlist_sidebar>0</hide_wishlist_sidebar>
+            </plp_customization>
+        </catalog>
+    </default>
+</config>

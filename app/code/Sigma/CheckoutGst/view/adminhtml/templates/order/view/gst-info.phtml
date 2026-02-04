@@ -1,0 +1,63 @@
+<?php
+/**
+ * GST Info Template for Admin Order View
+ *
+ * @var \Sigma\CheckoutGst\Block\Adminhtml\Order\View\GstInfo $block
+ */
+?>
+<?php if ($block->hasGstNo()): ?>
+<div class="admin__page-section order-gst-information">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('GST Information')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <table class="admin__table-secondary order-gst-table">
+            <tbody>
+                <tr>
+                    <th class="label"><?= $block->escapeHtml(__('Company GST No')) ?>:</th>
+                    <td class="value">
+                        <strong class="gst-number"><?= $block->escapeHtml($block->getCompanyGstNo()) ?></strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    .order-gst-information {
+        float: left;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        clear: both;
+    }
+    .order-gst-information .admin__page-section-title {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+    .order-gst-information .admin__page-section-title .title {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: #303030;
+    }
+    .order-gst-table {
+        width: auto;
+    }
+    .order-gst-table th.label {
+        font-weight: 400;
+        color: #666;
+        padding-right: 15px;
+        white-space: nowrap;
+        vertical-align: top;
+    }
+    .order-gst-table td.value {
+        padding-left: 0;
+    }
+    .order-gst-table .gst-number {
+        color: #006bb4;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+</style>
+<?php endif; ?>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma ProductSlider Module Declaration
+ *
+ * @category  Sigma
+ * @package   Sigma_ProductSlider
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Sigma_ProductSlider" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_CatalogInventory"/>
+            <module name="Magento_Widget"/>
+            <module name="Magento_Cms"/>
+        </sequence>
+    </module>
+</config>

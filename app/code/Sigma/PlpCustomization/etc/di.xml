@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma PlpCustomization Dependency Injection
+ *
+ * @category  Sigma
+ * @package   Sigma_PlpCustomization
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- Register Block for injecting config into frontend -->
+    <type name="Magento\Framework\View\Element\Template">
+        <plugin name="sigma_plp_customization_template"
+                type="Sigma\PlpCustomization\Plugin\TemplatePlugin"
+                sortOrder="10"/>
+    </type>
+
+</config>

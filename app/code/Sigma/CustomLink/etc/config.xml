@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CustomLink Default Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_CustomLink
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <custom_navigation_link>
+                <enabled>0</enabled>
+                <links></links>
+            </custom_navigation_link>
+        </catalog>
+    </default>
+</config>

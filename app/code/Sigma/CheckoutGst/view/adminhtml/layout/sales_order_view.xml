@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutGst Admin Order View Layout
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutGst
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Add GST info after the order view tab content -->
+        <referenceContainer name="content">
+            <block class="Sigma\CheckoutGst\Block\Adminhtml\Order\View\GstInfo" 
+                   name="order_gst_info" 
+                   template="Sigma_CheckoutGst::order/view/gst-info.phtml"
+                   after="sales_order_view"/>
+        </referenceContainer>
+    </body>
+</page>

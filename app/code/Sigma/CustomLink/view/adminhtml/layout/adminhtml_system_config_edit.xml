@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CustomLink Adminhtml Layout
+ *
+ * @category  Sigma
+ * @package   Sigma_CustomLink
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Sigma_CustomLink::css/admin-styles.css"/>
+    </head>
+</page>

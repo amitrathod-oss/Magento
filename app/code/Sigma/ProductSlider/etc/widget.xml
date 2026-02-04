@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma ProductSlider Widget Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_ProductSlider
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    
+    <widget id="sigma_product_slider" class="Sigma\ProductSlider\Block\Widget\ProductSlider"
+            placeholder_image="Sigma_ProductSlider::images/widget_placeholder.png">
+        <label translate="true">Sigma Product Slider</label>
+        <description translate="true">Displays a configurable product slider with in-stock products only</description>
+        
+        <parameters>
+            <!-- Basic Settings -->
+            <parameter name="title" xsi:type="text" visible="true" sort_order="10">
+                <label translate="true">Slider Title</label>
+                <description translate="true">Title displayed above the slider</description>
+            </parameter>
+            
+            <parameter name="product_source" xsi:type="select" visible="true" sort_order="20"
+                       source_model="Sigma\ProductSlider\Model\Config\Source\ProductSource">
+                <label translate="true">Product Source</label>
+                <description translate="true">Select the source of products to display</description>
+            </parameter>
+            
+            <parameter name="category_ids" xsi:type="block" visible="true" sort_order="30">
+                <label translate="true">Categories</label>
+                <description translate="true">Select categories to fetch products from</description>
+                <block class="Sigma\ProductSlider\Block\Adminhtml\Widget\CategoryChooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Categories...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            
+            <parameter name="product_count" xsi:type="text" visible="true" sort_order="40">
+                <label translate="true">Number of Products</label>
+                <description translate="true">Maximum number of products to display</description>
+                <value>10</value>
+            </parameter>
+            
+            <!-- Slider Settings -->
+            <parameter name="slides_to_show" xsi:type="text" visible="true" sort_order="50">
+                <label translate="true">Products Per View (Desktop)</label>
+                <description translate="true">Number of products visible at once on desktop</description>
+                <value>4</value>
+            </parameter>
+            
+            <parameter name="slides_to_show_tablet" xsi:type="text" visible="true" sort_order="60">
+                <label translate="true">Products Per View (Tablet)</label>
+                <description translate="true">Number of products visible at once on tablet</description>
+                <value>3</value>
+            </parameter>
+            
+            <parameter name="slides_to_show_mobile" xsi:type="text" visible="true" sort_order="70">
+                <label translate="true">Products Per View (Mobile)</label>
+                <description translate="true">Number of products visible at once on mobile</description>
+                <value>2</value>
+            </parameter>
+            
+            <parameter name="autoplay" xsi:type="select" visible="true" sort_order="80"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Enable Autoplay</label>
+                <description translate="true">Automatically scroll through products</description>
+                <value>0</value>
+            </parameter>
+            
+            <parameter name="autoplay_speed" xsi:type="text" visible="true" sort_order="90">
+                <label translate="true">Autoplay Speed (ms)</label>
+                <description translate="true">Time between slide transitions in milliseconds</description>
+                <value>3000</value>
+            </parameter>
+            
+            <parameter name="show_nav" xsi:type="select" visible="true" sort_order="100"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Show Navigation Arrows</label>
+                <value>1</value>
+            </parameter>
+            
+            <parameter name="show_dots" xsi:type="select" visible="true" sort_order="110"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Show Pagination Dots</label>
+                <value>0</value>
+            </parameter>
+            
+            <parameter name="infinite_loop" xsi:type="select" visible="true" sort_order="120"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Infinite Loop</label>
+                <description translate="true">Enable continuous loop sliding</description>
+                <value>1</value>
+            </parameter>
+            
+            <!-- Display Settings -->
+            <parameter name="show_add_to_cart" xsi:type="select" visible="true" sort_order="130"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Show Add to Cart Button</label>
+                <value>1</value>
+            </parameter>
+            
+            <parameter name="show_wishlist" xsi:type="select" visible="true" sort_order="140"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Show Add to Wishlist</label>
+                <value>1</value>
+            </parameter>
+            
+            <parameter name="show_compare" xsi:type="select" visible="true" sort_order="150"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Show Add to Compare</label>
+                <value>1</value>
+            </parameter>
+            
+        </parameters>
+        
+        <containers>
+            <container name="content">
+                <template name="grid" value="default"/>
+            </container>
+            <container name="content.top">
+                <template name="grid" value="default"/>
+            </container>
+            <container name="content.bottom">
+                <template name="grid" value="default"/>
+            </container>
+            <container name="sidebar.main">
+                <template name="grid" value="default"/>
+            </container>
+            <container name="sidebar.additional">
+                <template name="grid" value="default"/>
+            </container>
+        </containers>
+    </widget>
+    
+</widgets>

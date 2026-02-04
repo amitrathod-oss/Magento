@@ -1,0 +1,28 @@
+<?php
+/**
+ * PLP Body Class Template
+ *
+ * Adds CSS classes to body element based on configuration
+ *
+ * @var \Sigma\PlpCustomization\Block\PlpBodyClass $block
+ */
+?>
+<?php if ($block->isEnabled()): ?>
+<script type="text/javascript">
+    (function() {
+        var body = document.body;
+        <?php if ($block->isHideWishlist()): ?>
+        body.classList.add('sigma-hide-wishlist');
+        <?php endif; ?>
+        <?php if ($block->isHideCompare()): ?>
+        body.classList.add('sigma-hide-compare');
+        <?php endif; ?>
+        <?php if ($block->isHideCompareSidebar()): ?>
+        body.classList.add('sigma-hide-compare-sidebar');
+        <?php endif; ?>
+        <?php if ($block->isHideWishlistSidebar()): ?>
+        body.classList.add('sigma-hide-wishlist-sidebar');
+        <?php endif; ?>
+    })();
+</script>
+<?php endif; ?>

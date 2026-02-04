@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutGst Frontend Dependency Injection
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutGst
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- Plugin to add GST field to checkout layout -->
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="sigma_checkout_gst_layout_processor" 
+                type="Sigma\CheckoutGst\Plugin\Checkout\LayoutProcessorPlugin"
+                sortOrder="100"/>
+    </type>
+    
+</config>
