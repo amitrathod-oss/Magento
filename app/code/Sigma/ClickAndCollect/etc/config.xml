@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Click and Collect Default Configuration
+ *
+ * @category  Sigma
+ * @package   Sigma_ClickAndCollect
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <clickandcollect>
+                <active>1</active>
+                <title>Store Pickup</title>
+                <name>Click and Collect</name>
+                <price>0.00</price>
+                <handling_fee>0</handling_fee>
+                <sort_order>10</sort_order>
+                <sallowspecific>0</sallowspecific>
+                <model>Sigma\ClickAndCollect\Model\Carrier\ClickAndCollect</model>
+                <specificerrmsg>Click and Collect is not available for your location.</specificerrmsg>
+                <store_address>123 Main Street, City, State 12345</store_address>
+                <store_hours>Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</store_hours>
+                <pickup_instructions>Please bring your order confirmation and valid ID for pickup.</pickup_instructions>
+            </clickandcollect>
+        </carriers>
+    </default>
+</config>

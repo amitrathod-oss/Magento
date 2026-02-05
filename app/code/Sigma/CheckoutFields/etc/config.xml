@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutFields Default Configuration
+ * Sets street lines to 3 by default
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutFields
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customer>
+            <address>
+                <!-- Number of street lines to display -->
+                <street_lines>3</street_lines>
+            </address>
+        </customer>
+    </default>
+</config>

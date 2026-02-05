@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sigma CheckoutFields Frontend Dependency Injection
+ *
+ * @category  Sigma
+ * @package   Sigma_CheckoutFields
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- Plugin to customize checkout fields -->
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="sigma_checkout_fields_layout_processor" 
+                type="Sigma\CheckoutFields\Plugin\Checkout\LayoutProcessorPlugin"
+                sortOrder="200"/>
+    </type>
+    
+</config>
