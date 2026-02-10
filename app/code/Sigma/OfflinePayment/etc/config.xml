@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <sigma_offline_payment>
+                <active>1</active>
+                <model>Sigma\OfflinePayment\Model\OfflinePayment</model>
+                <title>Offline Payment Method</title>
+                <payment_action>authorize_capture</payment_action>
+                <allowspecific>1</allowspecific>
+                <specificcountry>US</specificcountry>
+                <order_status>processing</order_status>
+                <auto_invoice>1</auto_invoice>
+                <instructions>Pay offline using cash, check, or bank transfer.</instructions>
+                <sort_order>100</sort_order>
+                <group>offline</group>
+            </sigma_offline_payment>
+        </payment>
+    </default>
+</config>

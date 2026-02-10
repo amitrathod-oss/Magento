@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="sigma_infinitescroll" translate="label" type="text" sortOrder="600"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Infinite Scroll</label>
+            <tab>catalog</tab>
+            <resource>Magento_Catalog::config_catalog</resource>
+            <group id="general" translate="label" type="text" sortOrder="10"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Infinite Scroll</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Replace default pagination with infinite scroll on category pages.</comment>
+                </field>
+                <field id="threshold" translate="label" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Scroll Threshold (px)</label>
+                    <comment>Distance from bottom of page (in pixels) to trigger loading next batch. Default: 300</comment>
+                    <validate>validate-number</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,85 @@
+/* Sigma Infinite Scroll Styles */
+
+/* ========================================
+   Hide Pagination
+   ======================================== */
+.sigma-hidden-pagination {
+    display: none !important;
+}
+
+/* ========================================
+   Loading Spinner
+   ======================================== */
+.sigma-infinite-loader {
+    display: none;
+    text-align: center;
+    padding: 30px 0;
+    margin: 20px 0;
+}
+
+.sigma-infinite-loader.active {
+    display: block;
+}
+
+.sigma-infinite-loader span {
+    display: block;
+    margin-top: 12px;
+    color: #999;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.sigma-spinner {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 3px solid #e0e0e0;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: sigma-spin 0.8s linear infinite;
+}
+
+@keyframes sigma-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   Product Fade-In Animation
+   ======================================== */
+.sigma-product-fadein {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.sigma-product-fadein.sigma-product-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   End of Products Message
+   ======================================== */
+.sigma-infinite-end {
+    text-align: center;
+    padding: 25px 0;
+    margin: 20px 0;
+    border-top: 1px solid #e8e8e8;
+}
+
+.sigma-infinite-end span {
+    color: #b0b0b0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   Sentinel Element (invisible)
+   ======================================== */
+#sigma-infinite-scroll-sentinel {
+    height: 1px;
+    visibility: hidden;
+}

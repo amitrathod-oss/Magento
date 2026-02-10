@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Sigma_InfiniteScroll::css/infinite-scroll.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Sigma\InfiniteScroll\Block\InfiniteScroll"
+                   name="sigma.infinite.scroll"
+                   template="Sigma_InfiniteScroll::infinite-scroll.phtml"
+                   after="-"/>
+        </referenceContainer>
+    </body>
+</page>

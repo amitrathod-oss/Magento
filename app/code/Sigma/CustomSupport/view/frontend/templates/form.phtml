@@ -1,0 +1,113 @@
+<?php
+/** @var \Sigma\CustomSupport\Block\SupportForm $block */
+$recaptchaEnabled = $block->isRecaptchaEnabled();
+$siteKey = $block->getRecaptchaSiteKey();
+?>
+<div class="customer-support-form">
+    <h2><?= $block->escapeHtml(__('Customer Support')) ?></h2>
+    <p><?= $block->escapeHtml(__('Please fill out the form below and we will get back to you as soon as possible.')) ?></p>
+
+    <form id="customer-support-form"
+          action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+          method="post"
+          data-mage-init='{"validation":{}}'>
+        <?= /* @noEscape */ $block->getBlockHtml('formkey') ?>
+
+        <fieldset class="fieldset">
+            <div class="field name required">
+                <label class="label" for="name">
+                    <span><?= $block->escapeHtml(__('Name')) ?></span>
+                </label>
+                <div class="control">
+                    <input type="text" id="name" name="name"
+                           title="<?= $block->escapeHtmlAttr(__('Name')) ?>"
+                           class="input-text"
+                           data-validate='{"required":true, "minlength":2, "maxlength":255}'/>
+                </div>
+            </div>
+
+            <div class="field email required">
+                <label class="label" for="email">
+                    <span><?= $block->escapeHtml(__('Email')) ?></span>
+                </label>
+                <div class="control">
+                    <input type="email" id="email" name="email"
+                           title="<?= $block->escapeHtmlAttr(__('Email')) ?>"
+                           class="input-text"
+                           data-validate='{"required":true, "validate-email":true}'/>
+                </div>
+            </div>
+
+            <div class="field contact-number required">
+                <label class="label" for="contact_number">
+                    <span><?= $block->escapeHtml(__('Contact Number')) ?></span>
+                </label>
+                <div class="control">
+                    <input type="tel" id="contact_number" name="contact_number"
+                           title="<?= $block->escapeHtmlAttr(__('Contact Number')) ?>"
+                           class="input-text"
+                           data-validate='{"required":true, "validate-phoneStrict":true}'/>
+                </div>
+            </div>
+
+            <div class="field message required">
+                <label class="label" for="message">
+                    <span><?= $block->escapeHtml(__('Message')) ?></span>
+                </label>
+                <div class="control">
+                    <textarea id="message" name="message" cols="5" rows="5"
+                              title="<?= $block->escapeHtmlAttr(__('Message')) ?>"
+                              class="input-text"
+                              data-validate='{"required":true, "minlength":10}'></textarea>
+                </div>
+            </div>
+
+            <?php if ($recaptchaEnabled && $siteKey): ?>
+            <div class="field recaptcha">
+                <div class="control">
+                    <div id="recaptcha-container" class="g-recaptcha"
+                         data-sitekey="<?= $block->escapeHtmlAttr($siteKey) ?>"></div>
+                    <div id="recaptcha-error" class="mage-error" style="display:none;">
+                        <?= $block->escapeHtml(__('Please complete the reCAPTCHA verification.')) ?>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+        </fieldset>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>"
+                        class="action submit primary">
+                    <span><?= $block->escapeHtml(__('Submit')) ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<?php if ($recaptchaEnabled && $siteKey): ?>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+require(['jquery', 'domReady!'], function ($) {
+    $('#customer-support-form').on('submit', function (e) {
+        var response = grecaptcha.getResponse();
+        if (!response) {
+            e.preventDefault();
+            $('#recaptcha-error').show();
+            return false;
+        }
+        $('#recaptcha-error').hide();
+    });
+});
+</script>
+<?php endif; ?>
+
+<style>
+.customer-support-form { max-width: 600px; margin: 0 auto 40px; }
+.customer-support-form h2 { margin-bottom: 10px; }
+.customer-support-form p { margin-bottom: 30px; color: #666; }
+.customer-support-form .field { margin-bottom: 20px; }
+.customer-support-form .recaptcha { margin-top: 10px; }
+#recaptcha-error { color: #e02b27; font-size: 12px; margin-top: 5px; }
+</style>

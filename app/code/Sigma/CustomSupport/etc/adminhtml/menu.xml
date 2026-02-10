@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sigma_CustomSupport::support"
+             title="Customer Support"
+             module="Sigma_CustomSupport"
+             sortOrder="60"
+             resource="Sigma_CustomSupport::support"/>
+        <add id="Sigma_CustomSupport::support_manage"
+             title="Support Requests"
+             module="Sigma_CustomSupport"
+             sortOrder="10"
+             parent="Sigma_CustomSupport::support"
+             action="sigma_customsupport/support/index"
+             resource="Sigma_CustomSupport::support_manage"/>
+    </menu>
+</config>

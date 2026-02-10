@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Register Config Provider for checkout -->
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="sigma_offline_payment_config_provider" xsi:type="object">
+                    Sigma\OfflinePayment\Model\ConfigProvider
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

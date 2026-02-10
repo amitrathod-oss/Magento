@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Repository Preference -->
+    <preference for="Sigma\CustomSupport\Api\Data\SupportInterface"
+                type="Sigma\CustomSupport\Model\Support"/>
+    <preference for="Sigma\CustomSupport\Api\SupportRepositoryInterface"
+                type="Sigma\CustomSupport\Model\SupportRepository"/>
+
+    <!-- Grid Collection Virtual Type -->
+    <virtualType name="Sigma\CustomSupport\Model\ResourceModel\Support\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sigma_custom_support</argument>
+            <argument name="resourceModel" xsi:type="string">Sigma\CustomSupport\Model\ResourceModel\Support</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Register Grid Collection -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sigma_customsupport_listing_data_source" xsi:type="string">
+                    Sigma\CustomSupport\Model\ResourceModel\Support\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

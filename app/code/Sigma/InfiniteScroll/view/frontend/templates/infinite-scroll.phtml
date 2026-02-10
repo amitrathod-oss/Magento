@@ -1,0 +1,14 @@
+<?php
+/** @var \Sigma\InfiniteScroll\Block\InfiniteScroll $block */
+if (!$block->isEnabled()) {
+    return;
+}
+?>
+<div id="sigma-infinite-scroll-sentinel" data-role="infinite-scroll-sentinel"></div>
+<script type="text/x-magento-init">
+{
+    "#sigma-infinite-scroll-sentinel": {
+        "Sigma_InfiniteScroll/js/infinite-scroll": <?= /* @noEscape */ $block->getJsConfig() ?>
+    }
+}
+</script>
