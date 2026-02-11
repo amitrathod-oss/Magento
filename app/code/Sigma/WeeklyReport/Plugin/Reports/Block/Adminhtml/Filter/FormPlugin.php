@@ -10,11 +10,14 @@ declare(strict_types=1);
 namespace Sigma\WeeklyReport\Plugin\Reports\Block\Adminhtml\Filter;
 
 use Magento\Reports\Block\Adminhtml\Filter\Form as FilterForm;
+use Magento\Sales\Block\Adminhtml\Report\Filter\Form\Order as OrderFilterForm;
 
 class FormPlugin
 {
     /**
      * After setForm: inject the 'week' option into the period_type field.
+     *
+     * Only applies to the Sales > Orders report page (Form\Order block).
      *
      * @param FilterForm $subject
      * @param FilterForm $result
@@ -22,6 +25,11 @@ class FormPlugin
      */
     public function afterSetForm(FilterForm $subject, $result)
     {
+        // Add 'Week' option only on the Sales > Orders report page
+        if (!$subject instanceof OrderFilterForm) {
+            return $result;
+        }
+
         $form = $subject->getForm();
         if ($form) {
             $periodField = $form->getElement('period_type');
