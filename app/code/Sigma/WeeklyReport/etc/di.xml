@@ -25,30 +25,6 @@
     <preference for="Magento\Sales\Model\ResourceModel\Report\Order\Collection"
                 type="Sigma\WeeklyReport\Model\ResourceModel\Report\Order\Collection" />
 
-    <!-- Preference for Shipping Report Collection: handle 'week' period SQL grouping -->
-    <preference for="Magento\Sales\Model\ResourceModel\Report\Shipping\Collection\Order"
-                type="Sigma\WeeklyReport\Model\ResourceModel\Report\Shipping\Collection\Order" />
-
-    <!-- Preference for Invoiced Report Collection: handle 'week' period SQL grouping -->
-    <preference for="Magento\Sales\Model\ResourceModel\Report\Invoiced\Collection\Order"
-                type="Sigma\WeeklyReport\Model\ResourceModel\Report\Invoiced\Collection\Order" />
-
-    <!-- Preference for Refunded Report Collection: handle 'week' period SQL grouping -->
-    <preference for="Magento\Sales\Model\ResourceModel\Report\Refunded\Collection\Order"
-                type="Sigma\WeeklyReport\Model\ResourceModel\Report\Refunded\Collection\Order" />
-
-    <!-- Preference for Bestsellers Report Collection: handle 'week' period SQL grouping -->
-    <preference for="Magento\Sales\Model\ResourceModel\Report\Bestsellers\Collection"
-                type="Sigma\WeeklyReport\Model\ResourceModel\Report\Bestsellers\Collection" />
-
-    <!-- Preference for Coupons (SalesRule) Report Collection: handle 'week' period SQL grouping -->
-    <preference for="Magento\SalesRule\Model\ResourceModel\Report\Collection"
-                type="Sigma\WeeklyReport\Model\ResourceModel\Report\SalesRule\Collection" />
-
-    <!-- Preference for Tax Report Collection: handle 'week' period SQL grouping -->
-    <preference for="Magento\Tax\Model\ResourceModel\Report\Collection"
-                type="Sigma\WeeklyReport\Model\ResourceModel\Report\Tax\Collection" />
-
     <!-- Preference for Date Renderer: handle 'week' period display as date range -->
     <preference for="Magento\Reports\Block\Adminhtml\Sales\Grid\Column\Renderer\Date"
                 type="Sigma\WeeklyReport\Block\Adminhtml\Sales\Grid\Column\Renderer\Date" />
